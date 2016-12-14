@@ -1,15 +1,15 @@
-jQuery(function($) {
+var sections = {
+  form            : $('#form'),
+  form_container  : $('.form-container'),
+  login           : $('#login-form'),
+  sign_up         : $('#sign-up-form'),
+},
+buttons = {
+  login   : $('#login'),
+  sign_up : $('#sign-up'),
+};
 
-  var sections = {
-    form            : $('#form'),
-    form_container  : $('.form-container'),
-    login           : $('#login-form'),
-    sign_up         : $('#sign-up-form'),
-  },
-  buttons = {
-    login   : $('#login'),
-    sign_up : $('#sign-up'),
-  };
+jQuery(function($) {
 
   //show sign up form initially
   getForm(sections.sign_up, sections.login);
@@ -59,10 +59,10 @@ jQuery(function($) {
 
   });
 
-  function getForm(show, hide) {
-    sections.form_container.empty().append(show);
-    hide.removeClass('show');
-    show.addClass('show');
-  }
-
 });
+
+function getForm(show, hide) {
+  sections.form_container.empty().append(show);
+  hide.removeClass('show');
+  show.addClass('show');
+}
