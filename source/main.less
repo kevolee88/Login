@@ -1,0 +1,112 @@
+//imports
+@import "../shared/normalize.less";
+@import "../shared/variables.less";
+
+html {
+}
+
+body {
+  background: @brand-navy;
+  font-size: 16px;
+  //flex
+  display: flex;
+  justify-content: center;
+}
+
+input[type=text], input[type=password] {
+  background: none;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  border: 2px solid @brand-gray;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+
+  &:focus {
+    border: 2px solid @brand-green;
+  }
+}
+
+// input[type=password] {
+//   letter-spacing: 5px;
+// }
+
+button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #1ab188;
+  color: #ffffff;
+  width: 100%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+
+  &:hover, &:focus {
+    background: #179b77;
+  }
+}
+
+#form {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 60px;
+  box-sizing: border-box;
+
+  h1 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .tab-group {
+    background: @brand-gray;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+    //flex
+    display: flex;
+    // flex-direction: row;
+    li {
+      color: @font-gray;
+      padding: 20px;
+      list-style-type: none;
+      transition: background-color .7s ease, color .7s ease;
+      //flex
+      flex-grow: 1;
+
+      &.active, &:hover {
+        color: #fff;
+        background-color: @brand-green;
+      }
+    }
+  }
+}
+
+form {
+  position: relative;
+  font-size: 1.3em;
+  .top-row {
+    //flex
+    display: flex;
+    flex-flow: row wrap;
+
+    .field-wrap {
+      width: 49%;
+      &:first-child {
+        margin-right: 2%;
+      }
+    }
+  }
+  .field-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5%;
+  }
+}
