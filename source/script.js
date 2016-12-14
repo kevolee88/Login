@@ -1,25 +1,36 @@
 jQuery(function($) {
 
+  var sections = {
+    form            : $('#form'),
+    form_container  : $('.form-container'),
+    login           : $('#login-form'),
+    sign_up         : $('#sign-up-form'),
+  },
+  buttons = {
+    login   : $('#login'),
+    sign_up : $('#sign-up'),
+  };
+
   //show sign up form initially
-  getSignup('form-sign-up');
+  getForm(sections.sign_up, sections.login);
 
   //show login form
-  $('#login').on('click', function(){
-    $('#sign-up').removeClass('active');
+  buttons.login.on('click', function(){
+    buttons.sign_up.removeClass('active');
     $(this).addClass('active');
-    getLogin('form-login');
+    getForm(sections.login, sections.sign_up);
   });
 
   //show sign up form
-  $('#sign-up').on('click', function(){
-    $('#login').removeClass('active');
+  buttons.sign_up.on('click', function(){
+    buttons.login.removeClass('active');
     $(this).addClass('active');
-    getSignup('form-sign-up');
-  })
+    getForm(sections.sign_up, sections.login);
+  });
 
 
   // animate label for each input
-  $('form').find('input, textarea').on('keyup blur focus', function (e) {
+  sections.form.find('input, textarea').on('keyup blur focus', function (e) {
     var $this = $(this),
         label = $this.prev('label');
 
@@ -48,32 +59,10 @@ jQuery(function($) {
 
   });
 
+  function getForm(show, hide) {
+    sections.form_container.empty().append(show);
+    hide.removeClass('show');
+    show.addClass('show');
+  }
+
 });
-
-function getLogin(id) {
-   $.ajax({
-
-     type: "GET",//post
-     url: window.uri + 'login.php',
-     data: "id="+id, // appears as $_GET['id'] @ ur backend side
-     success: function(data) {
-           // data is ur summary
-          $('.form-container').html(data);
-     }
-
-   });
-}
-
-function getSignup(id) {
-   $.ajax({
-
-     type: "GET",//post
-     url: window.uri + 'sign-up.php',
-     data: "id="+id, // appears as $_GET['id'] @ ur backend side
-     success: function(data) {
-           // data is ur summary
-          $('.form-container').html(data);
-     }
-
-   });
-}
