@@ -9,6 +9,7 @@ $assets_root  = 'http://' . $_SERVER['HTTP_HOST'] . '/login/assets';
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="stylesheet" href="<?=$assets_root;?>/css/main.css" media="screen" title="no title" charset="utf-8">
   </head>
@@ -77,7 +78,6 @@ $assets_root  = 'http://' . $_SERVER['HTTP_HOST'] . '/login/assets';
     </div>
 
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script type="text/javascript" src="<?=$assets_root;?>/js/script.js"></script>
 
