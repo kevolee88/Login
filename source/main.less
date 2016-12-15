@@ -13,7 +13,7 @@ body {
   justify-content: center;
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
   background: none;
   color: #fff;
   width: 100%;
@@ -128,5 +128,17 @@ form {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
+  }
+}
+
+.parsley-errors-list {
+  font-size: 14px;
+  color: @brand-green;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    text-align: right;
   }
 }
