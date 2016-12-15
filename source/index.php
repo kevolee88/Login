@@ -24,59 +24,58 @@ $assets_root  = 'http://' . $_SERVER['HTTP_HOST'] . '/login/assets';
 
       <!-- START FORM CONTAINER -->
       <div class="form-container">
-        <!-- form here dynamically with js -->
+
+        <!-- START LOGIN FORM -->
+        <div id="login-form">
+          <h1>Welcome Back!</h1>
+
+          <form id="form-login" action="index.html" method="post">
+
+            <div class="field-wrap">
+              <input id="email_address" type="text" name="email_address" value="" placeholder="Email Address">
+            </div>
+            <div class="field-wrap">
+              <input id="password" type="password" name="password" value="" placeholder="Password">
+            </div>
+            <button type="submit" name="button">Login</button>
+
+          </form>
+        </div>
+        <!-- END LOGIN FORM -->
+
+        <!-- START SIGN UP FORM -->
+        <div id="sign-up-form">
+          <h1>Sign Up for Free</h1>
+
+          <form id="form-sign-up" action="index.html" method="post">
+
+            <div class="top-row">
+              <div class="field-wrap">
+                <input id="first-name" type="text" name="first_name" value="" placeholder="First Name">
+              </div>
+              <div class="field-wrap">
+                <input id="last-name" type="text" name="last_name" value="" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="field-wrap">
+              <input id="email" type="text" name="email" value="" placeholder="Email">
+            </div>
+            <div class="field-wrap">
+              <input id="username" type="text" name="username" value="" placeholder="Username">
+            </div>
+            <div class="field-wrap">
+              <input id="password" type="password" name="password" value="" placeholder="Password">
+            </div>
+            <button type="submit" name="button">Get Started</button>
+
+          </form>
+        </div>
+        <!-- END SIGN UP FORM -->
+
       </div>
       <!-- END FORM CONTAINER -->
 
     </section>
-
-    <div id="login-form">
-      <!-- START LOGIN FORM -->
-      <h1>Welcome Back!</h1>
-
-      <form id="form-login" action="index.html" method="post">
-
-        <div class="field-wrap">
-          <input id="email_address" type="text" name="email_address" value="" placeholder="Email Address">
-        </div>
-        <div class="field-wrap">
-          <input id="password" type="password" name="password" value="" placeholder="Password">
-        </div>
-        <button type="submit" name="button">Login</button>
-
-      </form>
-      <!-- END LOGIN FORM -->
-    </div>
-
-    <div id="sign-up-form">
-      <!-- START SIGN UP FORM -->
-      <h1>Sign Up for Free</h1>
-
-      <form id="form-sign-up" action="index.html" method="post">
-
-        <div class="top-row">
-          <div class="field-wrap">
-            <input id="first-name" type="text" name="first_name" value="" placeholder="First Name">
-          </div>
-          <div class="field-wrap">
-            <input id="last-name" type="text" name="last_name" value="" placeholder="Last Name">
-          </div>
-        </div>
-        <div class="field-wrap">
-          <input id="email" type="text" name="email" value="" placeholder="Email">
-        </div>
-        <div class="field-wrap">
-          <input id="username" type="text" name="username" value="" placeholder="Username">
-        </div>
-        <div class="field-wrap">
-          <input id="password" type="password" name="password" value="" placeholder="Password">
-        </div>
-        <button type="submit" name="button">Get Started</button>
-
-      </form>
-      <!-- END SIGN UP FORM -->
-    </div>
-
 
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" ></script>
     <script type="text/javascript" src="<?=$assets_root;?>/js/script.js"></script>

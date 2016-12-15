@@ -1,3 +1,5 @@
+process.title = 'chug';
+
 var gulp = require('gulp');
 
 //require plugins
@@ -8,7 +10,15 @@ var jshint = require('gulp-jshint'),
     pump = require('pump'),
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber'),
-    livereload = require('gulp-livereload');
+    livereload = require('gulp-livereload'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rename = require('gulp-rename'),
+    importJS = require('gulp-importjs');
+
+//paths
+var srcDir  = '/source/',
+    destDir = '/assets/',
+    importJsDir = destDir;
 
 function errorLog(error) {
   console.error.bind(error);
@@ -27,8 +37,9 @@ gulp.task('less', function() {
 
 gulp.task('minify-js', function (cb) {
   pump([
-        gulp.src('source/*.js'),
+        gulp.src('source/*.jsrc'),
         plumber({errorHandler: notify.onError("Error: <%= error.message %>")}),
+        rename({extname: '.js'}),
         jshint(),
         jshint.reporter('default'),
         uglify({
@@ -44,7 +55,7 @@ gulp.task('minify-js', function (cb) {
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('source/*.js', ['minify-js']);
+  gulp.watch('source/*.jsrc', ['minify-js']);
   gulp.watch('source/*.less', ['less']);
   gulp.watch('source/*.php', livereload());
 });
