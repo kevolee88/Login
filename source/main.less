@@ -93,11 +93,19 @@ button {
   }
 }
 
-#login-form, #sign-up-form {
-  display: none;
+.form-container {
 
-  &.show {
-    display: block;
+  #login-form, #sign-up-form {
+    display: none;
+    opacity: 0;
+    top: 100px;
+    transition: opacity .5s ease, transform .5s ease;
+
+    &.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
