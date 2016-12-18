@@ -28,6 +28,8 @@ $(function() {
     getForm(sections.sign_up, sections.login);
   });
 
+  
+
 
   $('#form-sign-up').parsley().on('form:success',function(ParsleyField){
 
