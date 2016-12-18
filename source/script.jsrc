@@ -28,12 +28,26 @@ $(function() {
     getForm(sections.sign_up, sections.login);
   });
 
-  window.Parsley.on('form:submit',function(ParsleyField){
 
-    var data = ParsleyField.$element.serializeJSON(); // get JSON data from the form
+  $('#form-sign-up').parsley().on('form:success',function(ParsleyField){
+
+    var newUser = ParsleyField.$element.serializeJSON(); // get JSON data from the form
+
+    console.log(newUser);
 
     // disable submit button
 		ParsleyField.$element.find('button[type=submit]').prop('disabled',true);
+
+  });
+
+  $('#form-login').parsley().on('form:success',function(ParsleyField){
+
+    var user = ParsleyField.$element.serializeJSON(); // get JSON data from the form
+
+    console.log(user);
+
+    // disable submit button
+    ParsleyField.$element.find('button[type=submit]').prop('disabled',true);
 
   });
 

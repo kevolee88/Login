@@ -32,7 +32,7 @@ $assets_root  = 'http://' . $_SERVER['HTTP_HOST'] . '/login/assets';
           <form id="form-login" action="" method="post" data-parsley-validate>
 
             <div class="field-wrap">
-              <input id="email_address" type="email" name="email_address" value="" placeholder="Email Address" required data-parsley-error-message="Please enter valid email" data-parsley-type="email">
+              <input id="user-name" type="text" name="user_name" value="" placeholder="Username" required data-parsley-error-message="Please enter valid username">
             </div>
             <div class="field-wrap">
               <input id="password" type="password" name="password" value="" placeholder="Password" required data-parsley-error-message="Please enter a password">

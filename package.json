@@ -17,7 +17,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.3",
-    "pump": "^1.0.1"
+    "pump": "^1.0.1",
+    "through2": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
